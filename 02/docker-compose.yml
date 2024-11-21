@@ -1,0 +1,29 @@
+version: "3.8"
+
+services:
+  app:
+    build:
+      context: .  # Use the current directory as the build context
+      dockerfile: Dockerfile
+    container_name: hw02_app
+    ports:
+      - "8000:8000"  # Map port 8000 on the host to port 8000 in the container
+    depends_on:
+      - postgres
+    environment:
+      - SQLALCHEMY_DATABASE_URL=postgresql+psycopg2://postgres:567234@postgres:5432/hw02
+
+  postgres:
+    image: postgres:13
+    container_name: hw02_postgres
+    ports:
+      - "5432:5432"  # Map PostgreSQL port
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 567234
+      POSTGRES_DB: hw02
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
