@@ -1,0 +1,65 @@
+# Computer-Systems-hw02
+
+## Огляд Проєкту
+
+**Computer-Systems-hw02** — це веб-застосунок, розроблений на базі FastAPI та PostgreSQL, який демонструє основи Docker та контейнеризації. Проєкт дозволяє перевірити підключення до бази даних через інтерактивний веб-інтерфейс.
+
+## Передумови
+
+Переконайтесь, що у вас встановлені наступні інструменти:
+
+- [Docker](https://www.docker.com/products/docker-desktop) (версія 20.10 або вище)
+- [Docker Compose](https://docs.docker.com/compose/install/) (версія 1.29 або вище)
+- [Git](https://git-scm.com/downloads) (для клонування репозиторію)
+
+## Встановлення
+
+1. **Клонування Репозиторію**
+
+   ```bash
+   git clone https://github.com/GoIT-Python-Web/Computer-Systems-hw02.git
+   cd Computer-Systems-hw02
+
+Перебудова Docker-образів:
+docker-compose build
+
+Запуск Контейнерів:
+docker-compose up -d
+
+Перевірка Статусу Контейнерів:
+docker-compose ps
+
+Щоб зупинити та видалити запущені контейнери:
+docker-compose down
+
+Використання
+Доступ до Застосунку
+
+Відкрийте веб-браузер та перейдіть за адресою: http://localhost:8000
+
+Документація API
+
+Перейдіть до інтерактивної документації Swagger UI: http://localhost:8000/docs
+
+Перевірка Підключення до Бази Даних
+
+На головній сторінці натисніть кнопку "Перевірити БД" щоб підтвердити успішне підключення до PostgreSQL.
+
+Computer-Systems-hw02/
+│
+├── conf/
+│   ├── __init__.py
+│   └── db.py
+│
+├── static/
+│   ├── main.js
+│   └── style.css
+│
+├── templates/
+│   └── index.html
+│
+├── main.py
+├── requirements.txt
+├── docker-compose.yml
+└── Dockerfile
+└── .env
